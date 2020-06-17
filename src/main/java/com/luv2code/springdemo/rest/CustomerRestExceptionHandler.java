@@ -26,6 +26,8 @@ public class CustomerRestExceptionHandler {
         // return ResponseEntity
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
+    
+    // add another exception handler .. to catch any exception (catch all)
 
     @ExceptionHandler
     public ResponseEntity<CustomerErrorResponse> handleException(Exception exc){
