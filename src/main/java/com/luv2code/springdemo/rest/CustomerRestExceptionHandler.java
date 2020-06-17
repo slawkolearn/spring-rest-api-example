@@ -27,6 +27,7 @@ public class CustomerRestExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler
     public ResponseEntity<CustomerErrorResponse> handleException(Exception exc){
 
         // create CustomerErrorResponse
@@ -37,7 +38,7 @@ public class CustomerRestExceptionHandler {
         );
 
         // return ResponseEntity
-        return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 
 }
