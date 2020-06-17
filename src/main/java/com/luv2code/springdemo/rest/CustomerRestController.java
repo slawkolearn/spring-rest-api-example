@@ -39,7 +39,7 @@ public class CustomerRestController {
 
     // add mapping for POST /customers - add new customer
 
-    @PostMapping
+    @PostMapping("/customers")
     public Customer addCustomer(@RequestBody Customer theCustomer){
 
         // also just in case the pass an id in JSON.. set id to 0
