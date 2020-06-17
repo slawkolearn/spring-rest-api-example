@@ -14,7 +14,7 @@ public class CustomerRestExceptionHandler {
 
     // add  an exception handler for CustomerNotFoundException
     @ExceptionHandler
-    public ResponseEntity<CustomerNotFoundException> handleException(CustomerNotFoundException exc){
+    public ResponseEntity<CustomerErrorResponse> handleException(CustomerNotFoundException exc){
 
         // create CustomerErrorResponse
         CustomerErrorResponse error = new CustomerErrorResponse(
@@ -24,10 +24,10 @@ public class CustomerRestExceptionHandler {
         );
 
         // return ResponseEntity
-        return new ResponseEntity(error, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 
-    public ResponseEntity<CustomerNotFoundException> handleException(Exception exc){
+    public ResponseEntity<CustomerErrorResponse> handleException(Exception exc){
 
         // create CustomerErrorResponse
         CustomerErrorResponse error = new CustomerErrorResponse(
